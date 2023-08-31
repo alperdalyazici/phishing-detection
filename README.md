@@ -41,10 +41,11 @@ Phishing attacks remain a significant cybersecurity concern. This project aims t
 - Inside the src folder, model.py contains the code for building and training the models.
 - Four different models are implemented: a LSTM model, a CNN model, a LSTM dominant hybrid model, and a CNN dominant hybrid model.
 - The models are trained using 27 different hyperparameter combinations and the parameters, as well as the metrics are saved in MLflow.
+- To create a new experiment in MLflow, you must run the following command in your terminal: `mlflow experiments create -n <experiment_name>`.
 - The models are trained using the training and validation subsets of the first dataset.
 - The models are evaluated using the test set of the first dataset.
 - Finally the results of the evaluation are saved in a MLflow.
-- To vuild and train your model you can run the script.
+- To build and train your model you can run the script.
 
 ## Hyperparameters
 
@@ -59,11 +60,11 @@ Phishing attacks remain a significant cybersecurity concern. This project aims t
 - The test_best_model inside the src folder contains the code for getting the best model for a specific experiment in MLflow and testign on the second dataset.
 - The script evaluates the performance of the best model on an unseen dataset and prints the accuracy, precision, recall, and F1-score.
 - After that the code produces a confusion matrix for the user to see the results.
-- To run this script you must have the second dataset in the data folder and the best model saved in your desired experiment in MLflow. After that just enter your experiment name and run the script. 
+- To run this script you must have the second dataset in the data folder and the best model saved in your desired experiment in MLflow. Make sure the name of the experiment that you want to test is the same as the one you created during the model training. After that just enter your experiment name and run the script. 
 
 ## Combine Models
 
 - Finally the combine_models.py script inside the src folder contains the code for combining the four models from the experiments.
 - The script finds the best model for each experiment and combines them into one model by taking the average of the predictions of the four models.
 - The script then evaluates the performance of the combined model on an unseen dataset and prints the accuracy, precision, recall, and F1-score.
-- To run this script you must have the second dataset in the data folder and the four best models saved in your desired experiments in MLflow. After that just enter your experiment names and run the script.
+- To run this script you must have the second dataset in the data folder and the four best models saved in your desired experiments in MLflow. Make sure the name of the experiment that you want to test is the same as the one you created during the model training. After that just enter your experiment names and run the script.
